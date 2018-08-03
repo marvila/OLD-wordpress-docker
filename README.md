@@ -4,17 +4,25 @@ WordPress docker setup using docker-compose.
 
 ## Setting up environment
 
-1. Install docker <https://docs.docker.com/install/>
-2. Install docker-compose <https://docs.docker.com/compose/install/>
-3. Clone this repository
-4. Make sure the `wordpress` folder is writable (777 permission)
-    * `chmod -R 777 wordpress`
+1. Install docker <https://docs.docker.com/install/>.
+2. Install docker-compose <https://docs.docker.com/compose/install/>.
+3. Clone this repository.
+4. Make sure the `wordpress` folder is writable (777 permission).
+    * `chmod -R 777 wordpress-docker/wordpress`
 
 ## Using the environment
 
-1. `docker-compose up`
-2. Open the web browser on `localhost` and you should see the "Famous 5 min WordPress Install"
+### Start
+
+1. `docker-compose up` OR `docker-compose up -d`
+    * `-d` means it will go into detached mode, that is, in the background.
+2. Open the web browser on `localhost` and you should see the "Famous 5 min WordPress Install".
+3. Finish the WordPress installation.
 3. You are good to go :)
+
+### Stop
+
+1. `docker-compose down`
 
 ## Possible issues
 
