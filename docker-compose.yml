@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+    web:
+        depends_on:
+            - mysql
+        image: wordpress:4.9.7-php7.1-apache
+        links:
+            - mysql
+        environment:
+            - WORDPRESS_DB_PASSWORD=password
+        ports:
+            - 80:80
+        working_dir: /var/www/html
+        volumes:
+            - ./wordpress:/var/www/html
+    mysql:
+        image: mysql:5.7
+        environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=wordpress
