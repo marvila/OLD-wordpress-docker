@@ -7,14 +7,20 @@ services:
         links:
             - mysql
         environment:
-            - WORDPRESS_DB_PASSWORD=password
+            WORDPRESS_DB_PASSWORD: password
+            WORDPRESS_DB_HOST: mysql:3306
         ports:
             - 80:80
         working_dir: /var/www/html
         volumes:
             - ./wordpress:/var/www/html
+        restart: always
     mysql:
-        image: mysql:5.7
+        image: mysql:5.7.22
+        ports:
+            - 3306:3306
         environment:
-        - MYSQL_ROOT_PASSWORD=password
-        - MYSQL_DATABASE=wordpress
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=wordpress
+        volumes:
+            - ./mysql:/var/lib/mysql
