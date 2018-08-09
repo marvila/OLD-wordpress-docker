@@ -5,6 +5,7 @@ WordPress docker setup using docker-compose.
 ## Setting up environment
 
 1. Install docker <https://docs.docker.com/install/>.
+    1. Make sure you have followed the *Post-installation steps for Linux* <https://docs.docker.com/install/linux/linux-postinstall/>
 2. Install docker-compose <https://docs.docker.com/compose/install/>.
 3. Clone this repository.
 4. Make sure the `wordpress` folder is writable (777 permission).
@@ -25,6 +26,16 @@ WordPress docker setup using docker-compose.
 1. `docker-compose down`
 
 ## Possible issues
+
+### Some sort of permission to run docker issue
+
+**Cause:**
+
+Docker daemon runs as root and thus the user needs permission to use the docker socket.
+
+**Solution:**
+
+Check the *Post-installation steps for Linux* <https://docs.docker.com/install/linux/linux-postinstall/>
 
 ### Bind for 0.0.0.0:80 failed: port is already allocated
 
