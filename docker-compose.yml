@@ -3,7 +3,7 @@ services:
     web:
         depends_on:
             - mysql
-        image: wordpress:4.9.7-php7.1-apache
+        image: wordpress:5.0.3-php7.2-apache
         links:
             - mysql
         environment:
