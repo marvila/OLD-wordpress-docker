@@ -61,6 +61,8 @@ Make sure the `wordpress` directory has the correct permissions (777).
 
 ### phpMyAdmin giving erros while uploading files / any other application on the same situation
 
+`Incorrect format parameter` error.
+
 **Cause:**
 
 Low values for PHP variables
