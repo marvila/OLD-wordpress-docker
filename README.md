@@ -58,3 +58,18 @@ This may be due to the fact that docker daemon is not able to write to the direc
 **Solution:**
 
 Make sure the `wordpress` directory has the correct permissions (777).
+
+### phpMyAdmin giving erros while uploading files / any other application on the same situation
+
+**Cause:**
+
+Low values for PHP variables
+
+**Solution:**
+
+Add the following to the .htaccess under the WordPress directory to Increase PHP file upload limit:
+
+```
+php_value post_max_size 500M
+php_value upload_max_filesize 500M
+```
