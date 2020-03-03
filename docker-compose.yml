@@ -3,7 +3,7 @@ services:
     web:
         depends_on:
             - mysql
-        image: wordpress:5.0.3-php7.2-apache
+        image: wordpress:latest
         links:
             - mysql
         environment:
@@ -16,7 +16,7 @@ services:
             - ./wordpress:/var/www/html
         restart: always
     mysql:
-        image: mysql:5.7.22
+        image: mysql:latest
         ports:
             - 3306:3306
         environment:
