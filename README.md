@@ -8,8 +8,9 @@ WordPress docker setup using docker-compose.
     1. Make sure you have followed the *Post-installation steps for Linux* <https://docs.docker.com/install/linux/linux-postinstall/>
 2. Install docker-compose <https://docs.docker.com/compose/install/>.
 3. Clone this repository.
-4. Make sure the `wordpress` folder is writable (777 permission).
-    * `chmod -R 777 wordpress-docker/wordpress`
+4. Execute post-setup.sh script with SUDO
+    1. May be needed to execute again later
+    2. This script will copi php.ini and fix/set user:group and permissions
 
 ## Using the environment
 
