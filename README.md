@@ -76,3 +76,33 @@ Add the following to the .htaccess under the WordPress directory to Increase PHP
 php_value post_max_size 500M
 php_value upload_max_filesize 500M
 ```
+
+###The server requested authentication method unknown to the client
+
+**Cause:**
+
+mySQL 8 needs adds a new password authentication, so need to get back to the old one.
+
+**Solution**
+
+Add the following to the mysql image block of the docker-compose.yml:
+https://stackoverflow.com/a/53580056
+
+```
+command: --default-authentication-plugin=mysql_native_password
+```
+
+Like:
+
+```
+    mysql:
+        image: mysql:latest
+        command: --default-authentication-plugin=mysql_native_password
+```
+
+Also remember to clean up stuff
+
+```
+docker rm $(docker ps -a -q)
+docker volume prune -f
+```
