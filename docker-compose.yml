@@ -14,6 +14,10 @@ services:
         working_dir: /var/www/html
         volumes:
             - ./wordpress:/var/www/html
+            # MARVILA: Use this when the theme resides on a folder outside the docker volume.
+            # This is important so we can use GIT without worrying about permissions (docker needs 777)
+            # eg.: - /home/marvila/estudio/projects/kstubos/themes/kstubos/src-wp:/var/www/html/wp-content/themes/kstubos
+            # - PATH_TO_LOCAL_THEME_FOLDER/src-wp:/var/www/html/wp-content/themes/THEME_FOLDER_NAME
         restart: always
     mysql:
         image: mysql:latest
