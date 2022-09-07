@@ -15,7 +15,7 @@ declare(strict_types=1);
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = 'asldk;jf;lksadjf;lkasjdf;lkjasd;lfkjas;ldkfjas;lkdjfa;lskjdf;akjsdf;lkasjd;flkajs'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -73,8 +73,10 @@ $cfg['Servers'][ $i ]['AllowNoPassword'] = false;
 /**
  * Directories for saving/loading files from server
  */
-$cfg['UploadDir'] = 'uploads';
-$cfg['SaveDir']   = 'uploads';
+$cfg['UploadDir']           = 'uploads';
+$cfg['SaveDir']             = 'uploads';
+$cfg['LoginCookieValidity'] = '36000'; // cannot be zero
+$cfg['ExecTimeLimit']       = 0;
 
 /**
  * Whether to display icons or text or both icons and text in table row
